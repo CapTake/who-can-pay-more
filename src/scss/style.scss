@@ -1,0 +1,101 @@
+@import "normalize.css";
+@import "./config/font.scss";
+
+/* убирает стрелочки у числового инпута */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: number-input;
+}
+
+@each $name, $color in $colors {
+  .color-#{$name} {
+    color: $color;
+  }
+  .bg-#{$name} {
+    background: $color;
+  }
+  .#{$name}-hovered:hover {
+    color: $color !important;
+  }
+  .#{$name}-bg-hovered:hover {
+    background: $color !important;
+  }
+  .#{$name}-blured {
+    &::after {
+      background: linear-gradient(265deg, #{$color} 0%, #{$color}0 100%) !important;
+    }
+  }
+}
+
+@each $name, $font-size in $font-sizes {
+  .text-#{$name} {
+    font-size: $font-size !important;
+  }
+}
+
+@each $name, $weight in $font-weights {
+  .text-#{$name} {
+    font-weight: $weight !important;
+  }
+}
+
+.page {
+  position: relative;
+  height: 100%;
+  padding: 20px 20px 75px;
+
+  @include media-desktop () {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto
+  }
+}
+.wrapper {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+  @include media-desktop () {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.visually-hidden {
+  position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	padding:0 !important;
+	border:0 !important;
+	height: 1px !important; 
+	width: 1px !important; 
+	overflow: hidden;
+}
+
+.v-text-field--outlined.v-input--is-focused:not(.error--text):not(.success--text) fieldset, .v-text-field--outlined.v-input--has-state:not(.error--text):not(.success--text) fieldset {
+  border: 2px solid $outline-color;
+}
+
+.v-text-field--outlined.v-input--is-focused:not(.error--text).success--text fieldset, .v-text-field--outlined.v-input--has-state:not(.error--text).success--text fieldset {
+  border: 2px solid $positive;
+}
+
+.v-text-field--full-width.v-input--dense:not(.v-text-field--solo).v-text-field--outlined .v-input__prepend-outer, .v-text-field--full-width.v-input--dense:not(.v-text-field--solo).v-text-field--outlined .v-input__prepend-inner, .v-text-field--full-width.v-input--dense:not(.v-text-field--solo).v-text-field--outlined .v-input__append-inner, .v-text-field--full-width.v-input--dense:not(.v-text-field--solo).v-text-field--outlined .v-input__append-outer, .v-text-field--enclosed.v-input--dense:not(.v-text-field--solo).v-text-field--outlined .v-input__prepend-outer, .v-text-field--enclosed.v-input--dense:not(.v-text-field--solo).v-text-field--outlined .v-input__prepend-inner, .v-text-field--enclosed.v-input--dense:not(.v-text-field--solo).v-text-field--outlined .v-input__append-inner, .v-text-field--enclosed.v-input--dense:not(.v-text-field--solo).v-text-field--outlined .v-input__append-outer {
+  margin-top: 15px;
+}
+
+.relative-position {
+  @extend %relative;
+}

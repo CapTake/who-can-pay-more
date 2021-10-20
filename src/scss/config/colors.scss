@@ -1,0 +1,30 @@
+$dark: #3E3E3E;;
+$white: #FFFFFF;
+$grey: #9CA1A7;
+$grey-lighten-1: #E6E6E6;
+$grey-lighten-2: #F9F9F9;
+$border-color: #D9D8D6;
+$negative: #E84749;
+$warning: #FF9A24;
+$shadow-1: 0px 4px 20px rgba(0, 0, 0, 0.1);
+$hover-gradient: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, $grey-lighten-2 50%, rgba(255, 255, 255, 0) 100%);
+
+$blue-grey: #9CBACE;
+$bg-color: #F9FAFC;
+$outline-color: #D7D7D7;
+$positive: #65F574;
+
+$colors: (
+  'dark': $dark,
+  'white': $white,
+  'grey': $grey,
+  'grey-lighten-1': $grey-lighten-1,
+  'grey-lighten-2': $grey-lighten-2,
+  'border-color': $border-color,
+  'negative': $negative,
+  'positive': $positive,
+  'warning': $warning,
+  'blue-grey': $blue-grey,
+  'bg-color': $bg-color,
+  'outline-color': $outline-color
+)

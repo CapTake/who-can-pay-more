@@ -1,0 +1,25 @@
+version: '3.4'
+services:
+
+  #Nginx Service
+  #openssl dhparam -out /etc/conf.ddhparam.pem 2048
+  nginx:
+     image: nginx:alpine
+     container_name: web
+     restart: always
+     tty: true
+     ports:
+       - "80:80"
+       - "443:443"
+     volumes:
+       - /home/wcpm:/var/www
+       - ./config/nginx.conf:/etc/nginx/nginx.conf
+       - /root/.acme.sh/:/etc/letsencrypt/live/
+       - /etc/nginx/dhparam.pem:/etc/nginx/dhparam.pem
+     networks:
+       - app-network
+
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge

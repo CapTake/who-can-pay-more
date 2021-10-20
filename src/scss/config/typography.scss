@@ -1,0 +1,33 @@
+$extra-large: 48px;
+$large: 36px;
+$h1: 26px;
+$h2: 22px;
+$medium: 18px;
+$basic: 16px;
+$caption: 14px;
+$sub-caption: 12px;
+$small: 11px;
+$extra-small: 10px;
+
+$font-sizes: (
+  'extra-large': $extra-large,
+  'large': $large,
+  'h1': $h1,
+  'h2': $h2,
+  'medium': $medium,
+  'basic': $basic,
+  'caption': $caption,
+  'sub-caption': $sub-caption,
+  'small': $small,
+  'extra-small': $extra-small
+);
+
+$weight-bold: 700;
+$weight-medium: 500;
+$weight-normal: 400;
+
+$font-weights: (
+  'bold': $weight-bold,
+  'medium': $weight-medium,
+  'normal': $weight-normal
+);
